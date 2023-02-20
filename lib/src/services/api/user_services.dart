@@ -14,7 +14,6 @@ class UserServices {
     await Future.delayed(
       const Duration(seconds: 3),
     );
-
     return  mockUser;
   }
 }

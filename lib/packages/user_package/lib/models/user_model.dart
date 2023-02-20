@@ -17,6 +17,12 @@ class User extends Equatable {
     this.data,
   });
 
+  static const empty = User(
+    username: '-',
+    uid: '-',
+    avatar_url: '-',
+  );
+  
   User copyWith({
     String? username,
     String? uid,

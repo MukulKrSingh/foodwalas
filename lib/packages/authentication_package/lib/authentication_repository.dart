@@ -19,7 +19,8 @@ class AuthenticationRepository {
     );
 
     //Adds value to  stream
-    yield AuthenticationStatus.authenticated;
+    //debugPrint(status.last.toString());
+    yield AuthenticationStatus.unauthenticated;
 
     //Outputs the whole stream
     yield* _controller.stream;
@@ -43,14 +44,13 @@ class AuthenticationRepository {
       _controller.add(AuthenticationStatus.unknown);
       return null;
     }
-  } 
-
-
-  void logOut() async {
-
-    _controller.add(AuthenticationStatus.unauthenticated);
-    
   }
 
-  
+  Future<void> logOut() async {
+    _controller.add(AuthenticationStatus.unauthenticated);
+  }
+
+  void dispose() {
+    _controller.close();
+  }
 }
