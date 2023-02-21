@@ -5,8 +5,8 @@ enum UsernameValidationError {
 }
 
 class Username extends FormzInput<String, UsernameValidationError> {
-  Username.pure() : super.pure('');
-  Username.dirty([super.value = '']) : super.dirty();
+  const Username.pure() : super.pure(' ');
+  const Username.dirty([super.value = '']) : super.dirty();
 
   @override
   UsernameValidationError? validator(String value) {

@@ -12,11 +12,11 @@ class AuthenticationServices {
 
 
   //* Login User
-  Future<Map<String, dynamic>> logInUser() async {
+  Future<bool> logInUser() async {
     await Future.delayed(
       const Duration(seconds: 3),
     );
-    return mockLoginUserResponse;
+    return true;
   }
 
   //* Logout User

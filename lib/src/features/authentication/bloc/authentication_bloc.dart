@@ -27,7 +27,7 @@ class AuthenticationBloc
     on<_AuthenticationStatusChanged>((event, emit) async {
       switch (event.status) {
         case AuthenticationStatus.authenticated:
-          final user = await _userRepository.getUser();
+          final user =  _userRepository.getUser();
           user != null
               ? emit(AuthenticationState.authenticated(user))
               : emit(

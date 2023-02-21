@@ -26,7 +26,7 @@ class AuthenticationRepository {
     yield* _controller.stream;
   }
 
-  Future<User?> logIn({
+  Future<bool> logIn({
     required String username,
     required String password,
   }) async {
@@ -34,15 +34,15 @@ class AuthenticationRepository {
       final authService =
           AuthenticationServices(username: username, password: password);
 
-      final Map<String, dynamic> loginResponse;
-
+      final bool loginResponse;
+      print('auth  added');
       loginResponse = await authService.logInUser();
       _controller.add(AuthenticationStatus.authenticated);
-      return User.fromMap(loginResponse);
+      return loginResponse;
     } catch (e) {
       debugPrint(e.toString());
       _controller.add(AuthenticationStatus.unknown);
-      return null;
+      return false;
     }
   }
 

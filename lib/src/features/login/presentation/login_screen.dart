@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:foodwalas/src/features/authentication/barrel/authentication_bloc_barrel.dart';
+import 'package:foodwalas/packages/authentication_package/barrel/auhtentication_repository_barrel.dart';
+import 'package:foodwalas/src/features/login/bloc/login_bloc.dart';
+import 'package:foodwalas/src/features/login/presentation/login_form.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -15,23 +15,17 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 10,
         title: const Text('Login'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-              
-              },
-              child: const Text('Login'),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Signup'),
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: BlocProvider(
+          create: (context) => LoginBloc(
+            authenticationRepository:
+                RepositoryProvider.of<AuthenticationRepository>(context),
+          ),
+          child: const LoginForm(),
         ),
       ),
     );

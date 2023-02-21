@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:foodwalas/src/constants/assets/assets_path.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -10,8 +10,15 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: CircularProgressIndicator()),
+    return Scaffold(
+      body: SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        child: Image.asset(
+          splash_gif,
+          fit: BoxFit.fitHeight,
+        ),
+      ),
     );
   }
 }

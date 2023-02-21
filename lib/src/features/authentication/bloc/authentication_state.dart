@@ -3,7 +3,7 @@ part of 'authentication_bloc.dart';
 
  class AuthenticationState extends Equatable {
   final AuthenticationStatus status;
-  final User? user;
+  final User user;
 
   const AuthenticationState._({
     this.status = AuthenticationStatus.unknown,
@@ -19,5 +19,5 @@ part of 'authentication_bloc.dart';
       : this._(status: AuthenticationStatus.unauthenticated);
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [status,user];
 }

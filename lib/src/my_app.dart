@@ -68,8 +68,9 @@ class _AppViewState extends State<AppView> {
   Widget build(BuildContext context) {
     return MaterialApp(
         navigatorKey: _navigatorKey,
-        theme: FlexColorScheme.light(scheme: FlexScheme.damask).toTheme,
-        darkTheme: FlexColorScheme.dark(scheme: FlexScheme.deepPurple).toTheme,
+        themeMode: ThemeMode.system,
+        theme: FlexColorScheme.light(scheme: FlexScheme.amber).toTheme,
+        darkTheme: FlexColorScheme.dark(scheme: FlexScheme.amber).toTheme,
         builder: (context, child) {
           return BlocListener<AuthenticationBloc, AuthenticationState>(
             listener: (context, state) {

@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 
 // ignore_for_file: public_member_api_docs, sort_constructors_first, non_constant_identifier_names
 class User extends Equatable {
@@ -49,7 +48,7 @@ class User extends Equatable {
     };
   }
 
-  factory User.fromMap(Map<String, dynamic> map) {
+  factory User.fromMap(Map<dynamic, dynamic> map) {
     return User(
       username: map['username'] as String,
       uid: map['uid'] as String,
