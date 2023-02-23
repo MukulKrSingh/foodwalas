@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodwalas/packages/authentication_package/barrel/auhtentication_repository_barrel.dart';
 import 'package:foodwalas/src/features/login/validators/barrel/validators_barrel.dart';

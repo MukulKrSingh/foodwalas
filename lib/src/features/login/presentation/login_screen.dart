@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodwalas/packages/authentication_package/barrel/auhtentication_repository_barrel.dart';
+import 'package:foodwalas/src/constants/assets/assets_path.dart';
 import 'package:foodwalas/src/features/login/bloc/login_bloc.dart';
 import 'package:foodwalas/src/features/login/presentation/login_form.dart';
 
@@ -25,7 +26,18 @@ class LoginScreen extends StatelessWidget {
             authenticationRepository:
                 RepositoryProvider.of<AuthenticationRepository>(context),
           ),
-          child: const LoginForm(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Image.asset(foodwalas_jpg),
+              const Icon(
+                Icons.perm_identity_rounded,
+                size: 100,
+              ),
+              const LoginForm(),
+            ],
+          ),
         ),
       ),
     );

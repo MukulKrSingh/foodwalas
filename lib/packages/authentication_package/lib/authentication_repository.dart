@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:foodwalas/packages/user_package/barrel/user_repository_barrel.dart';
 import 'package:foodwalas/src/services/api/authentication_services.dart';
 
 enum AuthenticationStatus {
@@ -35,7 +34,7 @@ class AuthenticationRepository {
           AuthenticationServices(username: username, password: password);
 
       final bool loginResponse;
-      print('auth  added');
+      //print('auth  added');
       loginResponse = await authService.logInUser();
       _controller.add(AuthenticationStatus.authenticated);
       return loginResponse;
